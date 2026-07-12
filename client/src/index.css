@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui,solidcolor;
   --font-display: "Outfit", system-ui, sans-serif;
   --font-mono: "Fira Code", monospace;
 }
@@ -11,23 +11,85 @@
   width: 8px;
   height: 8px;
 }
+
 .terminal-scrollbar::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #048820;
 }
+
 .terminal-scrollbar::-webkit-scrollbar-thumb {
   background: #475569;
   border-radius: 4px;
 }
+
 .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
 
 /* Animations */
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .animate-pulse-slow {
   animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.login-btn {
+  background: #2563eb;
+  color: white;
+  padding: 12px 30px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.5);
+}
+
+/* Rocket vibration and thruster fire animations for deployment theme */
+@keyframes rocket-vibrate {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 0.5px) rotate(-1deg); }
+  40% { transform: translate(-0.5px, -1px) rotate(1deg); }
+  60% { transform: translate(1px, 0.5px) rotate(0deg); }
+  80% { transform: translate(0.5px, -0.5px) rotate(1deg); }
+}
+
+@keyframes thruster-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-rocket-vibrate {
+  display: inline-block;
+  animation: rocket-vibrate 0.15s infinite ease-in-out;
+}
+
+.animate-thruster {
+  display: inline-block;
+  animation: thruster-pulse 0.3s infinite ease-in-out;
+}
+
+.login-btn-deploying {
+  background: linear-gradient(135deg, #2563eb, #8b5cf6, #ec4899);
+  background-size: 200% 200%;
+  animation: gradient-shift 1.5s infinite linear;
 }

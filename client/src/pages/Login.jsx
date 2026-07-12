@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Cloud, Loader2, ArrowRight } from "lucide-react";
+import { Cloud, Loader2, ArrowRight, Rocket } from "lucide-react";
 
 const Login = () => {
   const { login } = useAuth();
@@ -93,10 +93,15 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+            className={`login-btn w-full flex items-center justify-center gap-2 disabled:cursor-not-allowed transition-all ${
+              loading ? "login-btn-deploying shadow-lg shadow-indigo-500/30" : ""
+            }`}
           >
             {loading ? (
-              <Loader2 className="h-5 w-5 animate-spin" />
+              <>
+                <Rocket className="h-5 w-5 animate-rocket-vibrate text-amber-300" />
+                <span className="animate-pulse font-medium">Deploying Session...</span>
+              </>
             ) : (
               <>
                 Login to Cockpit
