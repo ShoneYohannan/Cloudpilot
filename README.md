@@ -127,26 +127,26 @@ Shows the modern landing page introducing CloudPilot and its cloud-native deploy
 
 Displays project statistics, build success rate, deployment metrics, and recent activity.
 
-(images/4.png)
+![Dashboard](images/4.png)
 
 📁 Project Management
 
 Allows users to create and manage deployment projects.
 
-(images/2.png)
+![Project Management](images/2.png)
 
 📜 Deployment History
 
 Shows deployment logs, commit hashes, build duration, and deployment status.
 
-(images/3.png)
+![Deployement History](images/3.png)
 
 
 👤 User Profile
 
 Displays authenticated user information and account details.
 
-(images/1.png)
+![User Profile](images/1.png)
 
 🔐 Authentication Workflow
 User Login
