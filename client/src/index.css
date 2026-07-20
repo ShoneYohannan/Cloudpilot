@@ -17,12 +17,12 @@
 }
 
 .terminal-scrollbar::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 4px;
+  background: #730da6;
+  border-radius: 5px;
 }
 
 .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #b219d8;
 }
 
 /* Animations */
