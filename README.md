@@ -1,69 +1,268 @@
-# CloudPilot - Cloud Deployment Simulator
+☁️ CloudPilot
 
-CloudPilot is a full-stack, cloud-native telemetry dashboard built for the Cloud Developer (AZ-204) track. It simulates continuous integration and deployment pipelines by containerizing source repositories using Docker, pushing images to Azure Container Registry (ACR), and deploying web hosts to Azure App Service.
+A Cloud-Native Project & Deployment Management Dashboard
 
-## 🚀 Key Features
+CloudPilot is a full-stack cloud-native web application that simulates the workflow of a modern deployment platform. It provides developers with a centralized dashboard to manage projects, monitor deployment pipelines, track build history, and visualize cloud deployment workflows.
 
-- **Project Management**: Full CRUD interface to connect Git repositories.
-- **Simulated Build Runner**: Multi-stage mock build pipeline running asynchronously in Node.js, spitting out rolling terminal compilation logs.
-- **Visual Telemetry Dashboard**: Complete visual reports showing build ratios, success trends, and system audit logs.
-- **JWT Protection Guard**: Secure password hashing via `bcrypt` and route interception utilizing JSON Web Tokens.
-- **Dark Mode**: Persisted elegant custom themes using Tailwind CSS v4.
+Unlike traditional CRUD applications, CloudPilot focuses on demonstrating concepts commonly used in cloud engineering and DevOps such as project management, deployment tracking, containerization, authentication, and cloud hosting.
 
----
+The application is built using the MERN Stack, containerized using Docker, and deployed on AWS EC2, making it suitable for learning cloud deployment workflows and showcasing modern full-stack development skills.
 
-## 🛠️ Technology Stack
+📖 Why CloudPilot?
 
-- **Frontend**: React (Vite 6+), Tailwind CSS v4, Lucide Icons, Axios, React Router.
-- **Backend**: Node.js, Express.js, Mongoose 8+, MongoDB Atlas.
-- **Infrastructure**: Docker & Docker Compose.
-- **Cloud targets**: Azure App Service, Azure Container Registry, GitHub Actions CI/CD.
+Modern software development is no longer limited to writing code. Applications must also be deployed, monitored, maintained, and managed in cloud environments.
 
----
+CloudPilot was created to demonstrate these concepts through an interactive dashboard that simulates a cloud deployment platform.
 
-## 📂 Project Structure
+The application provides users with the ability to:
 
-```text
-CloudPilot/
- ├── client/                  # React Frontend
- │    ├── src/
- │    │    ├── components/    # Navigation layouts and route guards
- │    │    ├── context/       # Auth state, session context, theme management
- │    │    ├── pages/         # Dashboard, Projects, Logs Console, Profile
- │    │    └── utils/         # Axios api connection interceptor
- │    └── Dockerfile          # Frontend container definition
- ├── server/                  # Express Backend
- │    ├── src/
- │    │    ├── config/        # Mongoose database connections
- │    │    ├── controllers/   # CRUD handlers and simulation runners
- │    │    ├── middleware/    # Auth guards and error handlers
- │    │    ├── models/        # Schemas for Project, Deployment, Activity
- │    │    └── routes/        # Router configuration bindings
- │    └── Dockerfile          # Backend container definition
- ├── docker-compose.yml       # Orchestrates both services
- └── .github/workflows/       # GitHub Actions workflow
-```
+Manage cloud projects
+Track deployment activities
+Visualize deployment statistics
+Maintain deployment history
+Authenticate securely
+Experience a cloud-inspired management dashboard
 
----
+The goal of CloudPilot is to combine modern web development with cloud computing concepts into a single portfolio project.
 
-## 🐳 Running with Docker
+🚀 Features
+User Authentication
+User Registration
+Secure Login
+JWT Authentication
+Password Hashing using bcrypt
+Protected Routes
+Dashboard
+Project Statistics
+Success Rate Monitoring
+Build Statistics
+Recent Activities
+Live Connection Status
+Project Management
 
-Ensure Docker Desktop is running, then execute:
+Users can
 
-```bash
-docker-compose up --build
-```
-- Frontend will be accessible at: `http://localhost` (Port 80)
-- Backend will be accessible at: `http://localhost:5000`
+Create Projects
+View Active Projects
+Manage Existing Projects
+Track Repository Information
+Deployment Pipeline
 
----
+CloudPilot simulates a deployment workflow by recording deployment information such as
 
-## 📑 Documentation
+Build ID
+Commit Hash
+Deployment Status
+Build Duration
+Deployment Time
+Deployment Logs
 
-Complete guides are available in the `docs/` folder:
-- [API Documentation](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/api_documentation.md)
-- [Docker Configuration Guide](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/docker_guide.md)
-- [Azure Deployment Guide](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/azure_guide.md)
-- [GitHub Actions CI/CD Guide](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/github_actions_guide.md)
-- [Technical Architecture Details](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/technical_architecture.md)
-- [Testing Guide](file:///c:/Users/Shone/OneDrive/Desktop/CloudPilot/docs/testing_guide.md)
+This demonstrates how deployment dashboards found in modern cloud platforms display deployment information.
+
+User Profile
+Profile Information
+Account Details
+User Role
+Email Information
+Modern UI
+Dark Theme
+Responsive Layout
+Modern Dashboard Design
+Cloud-inspired Interface
+🛠 Technology Stack
+Frontend
+React
+Vite
+React Router
+Material UI (MUI)
+Axios
+Backend
+Node.js
+Express.js
+MongoDB Atlas
+Mongoose
+JWT
+bcrypt
+DevOps & Cloud
+Docker
+Docker Compose
+Git
+GitHub
+AWS EC2 (Deployment)
+PM2
+Nginx
+🏗 System Architecture
+                     User
+                       │
+                       ▼
+                React Frontend
+               (Vite + Material UI)
+                       │
+                 REST API (Axios)
+                       │
+                       ▼
+              Express.js Backend
+                       │
+          JWT Authentication Middleware
+                       │
+                       ▼
+                 MongoDB Atlas
+                       │
+           Project & Deployment Data
+                       │
+                       ▼
+         Dashboard • Projects • History
+                       │
+                 Docker Container
+                       │
+                  AWS EC2 Instance
+📸 Application Screenshots
+🏠 Landing Page
+
+Shows the modern landing page introducing CloudPilot and its cloud-native deployment workflow.
+
+![Home Page](images/5.png)
+
+📊 Dashboard
+
+Displays project statistics, build success rate, deployment metrics, and recent activity.
+
+(images/4.png)
+
+📁 Project Management
+
+Allows users to create and manage deployment projects.
+
+(images/2.png)
+
+📜 Deployment History
+
+Shows deployment logs, commit hashes, build duration, and deployment status.
+
+(images/3.png)
+
+
+👤 User Profile
+
+Displays authenticated user information and account details.
+
+(images/1.png)
+
+🔐 Authentication Workflow
+User Login
+      │
+      ▼
+Validate Credentials
+      │
+      ▼
+Generate JWT Token
+      │
+      ▼
+Store Authentication Token
+      │
+      ▼
+Access Protected Routes
+📦 Project Structure
+CloudPilot
+
+client/
+│
+├── src/
+├── public/
+├── components/
+├── pages/
+└── utils/
+
+server/
+│
+├── src/
+├── routes/
+├── controllers/
+├── middleware/
+├── models/
+└── config/
+
+Dockerfile
+docker-compose.yml
+README.md
+⚙ Installation
+
+Clone Repository
+
+git clone https://github.com/ShoneYohannan/Cloudpilot.git
+
+Move into project
+
+cd Cloudpilot
+Backend
+cd server
+
+npm install
+
+npm run dev
+Frontend
+cd client
+
+npm install
+
+npm run dev
+🔑 Environment Variables
+
+Create a .env file inside the backend directory.
+
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+🐳 Docker
+
+Build Docker Image
+
+docker build -t cloudpilot .
+
+Run Docker Container
+
+docker compose up
+☁ AWS Deployment
+
+CloudPilot is designed to be deployed on AWS EC2 using Docker.
+
+Deployment Workflow
+
+GitHub Repository
+        │
+        ▼
+AWS EC2 Instance
+        │
+Clone Repository
+        │
+Docker Build
+        │
+Run Containers
+        │
+PM2 Process Manager
+        │
+Nginx Reverse Proxy
+        │
+Public Website
+📈 Future Enhancements
+GitHub Actions CI/CD
+Kubernetes Deployment
+Redis Caching
+Docker Swarm Support
+Kubernetes Monitoring
+Role-Based Access Control (RBAC)
+Email Verification
+Notifications
+Real-Time Deployment Logs
+Multi-User Collaboration
+Cloud Monitoring Dashboard
+Kubernetes Cluster Simulation
+👨‍💻 Author
+
+Shone Yohannan
+
+B.Tech – Artificial Intelligence & Data Science
+
+⭐ If you found this project useful, please consider giving it a Star on GitHub.
