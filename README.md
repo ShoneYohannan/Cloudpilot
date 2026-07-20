@@ -148,122 +148,164 @@ Displays authenticated user information and account details.
 
 ![User Profile](images/1.png)
 
-🔐 Authentication Workflow
+## 🔐 Authentication Workflow
+
+```text
 User Login
-      │
-      ▼
+     │
+     ▼
 Validate Credentials
-      │
-      ▼
+     │
+     ▼
 Generate JWT Token
-      │
-      ▼
+     │
+     ▼
 Store Authentication Token
-      │
-      ▼
+     │
+     ▼
 Access Protected Routes
-📦 Project Structure
+```
+
+---
+
+# 📦 Project Structure
+
+```text
 CloudPilot
-
-client/
 │
-├── src/
-├── public/
-├── components/
-├── pages/
-└── utils/
-
-server/
+├── client/
+│   ├── src/
+│   ├── public/
+│   ├── components/
+│   ├── pages/
+│   └── utils/
 │
-├── src/
-├── routes/
-├── controllers/
-├── middleware/
-├── models/
-└── config/
+├── server/
+│   ├── src/
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   └── config/
+│
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
 
-Dockerfile
-docker-compose.yml
-README.md
-⚙ Installation
+---
 
-Clone Repository
+# ⚙️ Installation
 
+### Clone Repository
+
+```bash
 git clone https://github.com/ShoneYohannan/Cloudpilot.git
-
-Move into project
-
 cd Cloudpilot
-Backend
+```
+
+### Backend
+
+```bash
 cd server
-
 npm install
-
 npm run dev
-Frontend
+```
+
+### Frontend
+
+```bash
 cd client
-
 npm install
-
 npm run dev
-🔑 Environment Variables
+```
 
-Create a .env file inside the backend directory.
+---
 
+# 🔑 Environment Variables
+
+Create a `.env` file inside the **server** folder.
+
+```env
 PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
 
 JWT_SECRET=your_secret_key
-🐳 Docker
+```
 
-Build Docker Image
+---
 
+# 🐳 Docker
+
+### Build Docker Image
+
+```bash
 docker build -t cloudpilot .
+```
 
-Run Docker Container
+### Run Containers
 
+```bash
 docker compose up
-☁ AWS Deployment
+```
 
-CloudPilot is designed to be deployed on AWS EC2 using Docker.
+---
 
-Deployment Workflow
-'''
+# ☁️ AWS Deployment
+
+CloudPilot is deployed on an **AWS EC2 Ubuntu Instance** using Docker containers.
+
+```text
 GitHub Repository
         │
         ▼
 AWS EC2 Instance
         │
+        ▼
 Clone Repository
         │
+        ▼
 Docker Build
         │
+        ▼
 Run Containers
         │
+        ▼
 PM2 Process Manager
         │
+        ▼
 Nginx Reverse Proxy
         │
+        ▼
 Public Website
-'''
-📈 Future Enhancements
-GitHub Actions CI/CD
-Kubernetes Deployment
-Redis Caching
-Docker Swarm Support
-Kubernetes Monitoring
-Role-Based Access Control (RBAC)
-Email Verification
-Notifications
-Real-Time Deployment Logs
-Multi-User Collaboration
-Cloud Monitoring Dashboard
-Kubernetes Cluster Simulation
-👨‍💻 Author
+```
 
-Shone Yohannan
+---
+
+# 📈 Future Enhancements
+
+- GitHub Actions CI/CD
+- Kubernetes Deployment
+- Redis Caching
+- Docker Swarm Support
+- Kubernetes Monitoring
+- Role-Based Access Control (RBAC)
+- Email Verification
+- Push Notifications
+- Real-Time Deployment Logs
+- Multi-User Collaboration
+- Cloud Monitoring Dashboard
+- Kubernetes Cluster Simulation
+
+---
+
+# 👨‍💻 Author
+
+**Shone Yohannan**
 
 B.Tech – Artificial Intelligence & Data Science
 
-⭐ If you found this project useful, please consider giving it a Star on GitHub.
+---
+
+⭐ If you found this project useful, please consider giving it a **Star** on GitHub.
