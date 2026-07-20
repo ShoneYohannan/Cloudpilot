@@ -229,7 +229,7 @@ docker compose up
 CloudPilot is designed to be deployed on AWS EC2 using Docker.
 
 Deployment Workflow
-
+'''
 GitHub Repository
         │
         ▼
@@ -246,6 +246,7 @@ PM2 Process Manager
 Nginx Reverse Proxy
         │
 Public Website
+'''
 📈 Future Enhancements
 GitHub Actions CI/CD
 Kubernetes Deployment
